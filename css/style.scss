@@ -1,0 +1,103 @@
+// // 변수를 활용해보자
+// $box: "red";
+// $ball: "green";
+// $mobile: "480px";
+// /* scss를 이용했지롱 */
+// h1 {
+//   color: $box;
+//   background-color: $ball;
+// }
+// p {
+//   color: $box;
+// }
+// // 중첩 (Nesting)
+// .wrap {
+//   position: relative;
+//   .inner {
+//     position: relative;
+//     gnb {
+//       position: relative;
+//       li {
+//         position: relative;
+//         a {
+//           position: relative;
+//           &:hover {
+//             background: $box;
+//             // & : 상위 선택자를 나타냄
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 1080px) {
+//   /* PC */
+//   .wrap {
+//     position: relative;
+//   }
+// }
+
+// .bt {
+//   position: relative;
+//   width: 100px;
+//   height: 100px;
+//   background-color: hotpink;
+//   color: #fff;
+//   &:active {
+//     background-color: blue;
+//   }
+//   span {
+//     display: inline-block;
+//     width: 10px;
+//     height: 10px;
+//     background-color: #000;
+//     border-radius: 50%;
+//   }
+// }
+
+.list {
+  position: relative;
+
+  /*변수*/
+  $w: 100px;
+  $h: 50px;
+  $bcolor: hotpink;
+
+  /* 중첩 */
+  li {
+    width: $w;
+    height: $h;
+    border: 5px solid #000;
+    background-color: $bcolor;
+
+    // 중첩된 속성 (property)
+    // margin-left: 10px;
+    // margin-right: 20px;
+    // margin-right: 20px;
+    // margin-right: 20px;
+    margin : {
+      left: 10px;
+      right: 20px;
+      right: 20px;
+      right: 20px;
+    }
+    font : {
+      size: 20px;
+      family: "고딕";
+      weight: 700;
+    }
+
+    /* 상위 참조 */
+    &:hover {
+      background-color: skyblue;
+      cursor: pointer;
+    }
+  }
+
+  @at-root .box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+}
